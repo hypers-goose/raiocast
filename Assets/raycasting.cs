@@ -13,6 +13,14 @@ public class raycasting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       if(Physics.Raycast (transform.position, transform.forward, 100)){
+           Debug.Log ("colide");
+           Debug.DrawRay(transform.position, transform.forward, Color.green, 100);
+        }
+        else Debug.Log ("não colide");
+
+
+
+
     }
 }

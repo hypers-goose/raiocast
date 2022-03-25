@@ -9,13 +9,17 @@ public class movimento : MonoBehaviour
     {
         
     }
-
+    float speed = 32;
     // Update is called once per frame
     void Update()
     {
     Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-    print(input);    
-
+    //print(input);
+    Vector3 direction= input.normalized;    
+    Vector3 velocity = direction * speed; 
+    Vector3 moveAmmount = velocity * Time.deltaTime; 
+    //transform.position += moveAmmount;
+    transform.Translate(moveAmmount);
     
     }
 }
